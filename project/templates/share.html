@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Certificate - Blockchain Certificate System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Blockchain Certificates</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">Share Your Certificate</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">{{ certificate.course_name }}</h4>
+                        
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle-fill"></i> Share this link with employers or institutions to allow them to verify your certificate.
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Verification Link</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" value="{{ share_url }}" id="share-url" readonly>
+                                <button class="btn btn-outline-primary" type="button" onclick="copyToClipboard()">
+                                    <i class="bi bi-clipboard"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Share via</label>
+                            <div class="d-flex gap-2">
+                                <a href="mailto:?subject=Verify%20my%20certificate&body=Please%20verify%20my%20certificate%20using%20this%20link:%20{{ share_url }}" class="btn btn-outline-primary">
+                                    <i class="bi bi-envelope"></i> Email
+                                </a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" class="btn btn-outline-primary">
+                                    <i class="bi bi-linkedin"></i> LinkedIn
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?text=Verify%20my%20certificate&url={{ share_url }}" target="_blank" class="btn btn-outline-primary">
+                                    <i class="bi bi-twitter"></i> Twitter
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <a href="/view_certificate/{{ certificate.certificate_id }}" class="btn btn-primary">
+                                <i class="bi bi-arrow-left"></i> Back to Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("share-url");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            
+            alert("Link copied to clipboard!");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

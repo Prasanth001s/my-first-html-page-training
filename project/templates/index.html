@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Certificate System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        .feature-box {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Blockchain Certificates</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/verify">Verify Certificate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Blockchain-Based Certificate System</h1>
+            <p class="lead mb-5">Secure, Tamper-proof, and Instantly Verifiable Certificates</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/register" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="/verify" class="btn btn-outline-dark btn-lg">Verify Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Features</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="feature-box bg-light">
+                        <h4>Immutable Certificates</h4>
+                        <p>Certificates stored on blockchain cannot be tampered with or forged.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box bg-light">
+                        <h4>Instant Verification</h4>
+                        <p>Verify certificates instantly using QR codes or certificate IDs.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box bg-light">
+                        <h4>Decentralized & Secure</h4>
+                        <p>No central authority needed, reducing fraud and increasing trust.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box bg-light">
+                        <h4>User Control</h4>
+                        <p>Recipients control who can access their certificates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3>For Issuers</h3>
+                    <ol class="list-group list-group-numbered mb-4">
+                        <li class="list-group-item">Register as an issuer</li>
+                        <li class="list-group-item">Create and issue certificates to recipients</li>
+                        <li class="list-group-item">Manage and revoke certificates if needed</li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <h3>For Recipients</h3>
+                    <ol class="list-group list-group-numbered mb-4">
+                        <li class="list-group-item">Register as a recipient</li>
+                        <li class="list-group-item">Receive certificates from trusted issuers</li>
+                        <li class="list-group-item">Share certificates with employers or institutions</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <h3>For Verifiers</h3>
+                <p>Anyone can verify a certificate's authenticity using the certificate ID or by scanning the QR code.</p>
+                <a href="/verify" class="btn btn-primary mt-3">Verify a Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 Blockchain Certificate System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
